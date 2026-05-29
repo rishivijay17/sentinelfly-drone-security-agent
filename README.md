@@ -74,7 +74,7 @@ The Investigation Assistant uses Retrieval-Augmented Generation (RAG) to combine
 
 ![Dashboard](screenshots/dashboard2.png)
 
-![Dashboard](screenshots/dashboard3.png)
+![Dashboard](screenshots/dashaboard3.png)
 
 ### Investigation Assistant
 
