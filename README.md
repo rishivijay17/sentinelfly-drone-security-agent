@@ -58,4 +58,85 @@ SentinelFly automates this process by:
 - Daily AI-generated security summaries
 - Executive-level operational overview
 
+## System Architecture
+
+SentinelFly processes simulated drone telemetry and surveillance frame descriptions through an event processing pipeline. Generated events are stored in SQLite for structured querying and indexed in ChromaDB for semantic retrieval.
+
+The Investigation Assistant uses Retrieval-Augmented Generation (RAG) to combine evidence from both stores before generating grounded responses through a local Ollama phi3 model. The indexed event data powers alerts, incident replay, entity tracking, and daily security briefings.
+
+![System Architecture](screenshots/architecture.png)
+
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard1.png)
+
+![Dashboard](screenshots/dashboard2.png)
+
+![Dashboard](screenshots/dashboard3.png)
+
+### Investigation Assistant
+
+![Investigation](screenshots/investigation1.png)
+
+![Investigation](screenshots/investigation2.png)
+
+![Investigation](screenshots/investigation3.png)
+
+### Incident Replay
+
+![Incident Replay](screenshots/incidentreplay1.png)
+
+![Incident Replay](screenshots/incidentreplay2.png)
+
+### Security Briefing
+
+![Security Briefing](screenshots/securitybriefing1.png)
+
+![Security Briefing](screenshots/securitybriefing2.png)
+
+![Security Briefing](screenshots/securitybriefing3.png)
+
+---
+
+## QA / Test Cases
+
+| Test Case | Expected Result |
+|------------|----------------|
+| Blue vehicle appears at gate | Event logged correctly |
+| Person loitering after midnight | Alert generated |
+| Query "white van" | Matching events retrieved |
+| Query repeated entity | Entity memory displayed |
+| Generate security briefing | AI summary produced |
+| Incident replay | Timeline reconstructed |
+| Threat scoring | Risk levels assigned correctly |
+| Semantic investigation query | Relevant evidence retrieved |
+
+---
+
+## Assignment Requirements Mapping
+
+| Requirement | Status |
+|------------|---------|
+| Process simulated drone telemetry data | ✅ Implemented |
+| Process simulated video frame descriptions | ✅ Implemented |
+| Identify objects and events with context | ✅ Implemented |
+| Generate real-time security alerts | ✅ Implemented |
+| Frame-by-frame indexing | ✅ Implemented |
+| Query indexed events by object or timestamp | ✅ Implemented |
+| AI-assisted implementation | ✅ Implemented |
+| QA testing | ✅ Implemented |
+
+---
+
+## Future Improvements
+
+- Integration with real drone telemetry streams
+- Real-time VLM-based frame analysis
+- Multi-drone fleet coordination
+- Advanced anomaly detection models
+- Cloud deployment
+- Automated incident escalation workflows
+
 ---
