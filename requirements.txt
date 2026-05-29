@@ -1,0 +1,5 @@
+streamlit
+pytest
+ollama
+chromadb
+sentence-transformers
